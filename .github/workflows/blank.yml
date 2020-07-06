@@ -1,0 +1,294 @@
+/**
+ * init.c
+ *
+ * DayZ Expansion Mod
+ * www.dayzexpansion.com
+ * © 2020 DayZ Expansion Mod Team
+ *
+ * This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. 
+ * To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+ *
+*/
+#include "$CurrentDir:\\mpmissions\\Expansion.ChernarusPlusGloom\\expansion\\ExpansionObjectSpawnTools.c"
+#include "$CurrentDir:\\mpmissions\\Expansion.ChernarusPlusGloom\\expansion\\missions\\MissionConstructor.c"
+
+//Spawn helper function
+void SpawnObject( string type, vector position, vector orientation )
+{
+    auto obj = GetGame().CreateObject( type, position );
+    obj.SetPosition( position );
+    obj.SetOrientation( orientation );
+    obj.SetOrientation( obj.GetOrientation() ); //Collision fix
+    obj.Update();
+    obj.SetAffectPathgraph( true, false );
+    if( obj.CanAffectPathgraph() ) GetGame().GetCallQueue( CALL_CATEGORY_SYSTEM ).CallLater( GetGame().UpdatePathgraphRegionByObject, 100, false, obj );
+}
+
+void main()
+{
+	//Your custom spawned objects
+                                   //Offshore
+SpawnObject( "Land_Tower_TC2_Mid", "13940.700195 21.299999 3883.379883", "0.000000 0.000000 0.000000" );
+SpawnObject( "Land_Tower_TC2_Mid", "13965.700195 21.299999 3868.949951", "0.000000 0.000000 0.000000" );
+SpawnObject( "Land_Tower_TC2_Mid", "13965.900391 21.400000 3897.379883", "0.000000 0.000000 0.000000" );
+SpawnObject( "bldr_pipe_big_18m", "13965.599609 41.200001 3889.439941", "0.000000 0.000000 0.000000" );
+SpawnObject( "bldr_pipe_big_18m", "13965.700195 41.150101 3878.290039", "179.999985 0.000000 0.000000" );
+SpawnObject( "bldr_pipe_big_18m", "13958.200195 41.200001 3893.760010", "59.999996 0.000000 0.000000" );
+SpawnObject( "bldr_pipe_big_18m", "13958.099609 41.150002 3873.949951", "119.999992 0.000000 0.000000" );
+SpawnObject( "bldr_pipe_big_18m", "13948.000000 41.150002 3887.669922", "-119.999992 0.000000 0.000000" );
+SpawnObject( "bldr_pipe_big_18m", "13948.000000 41.200001 3879.679932", "-59.999996 0.000000 0.000000" );
+SpawnObject( "bldr_wall_indcnch_10", "13942.599609 45.730000 3883.659912", "0.000000 0.000000 0.000000" );
+SpawnObject( "bldr_wall_indcnch_10", "13964.799805 45.799999 3896.600098", "-59.999996 0.000000 0.000000" );
+SpawnObject( "bldr_wall_indcnch_10", "13964.799805 45.750000 3871.020020", "59.999996 0.000000 0.000000" );
+SpawnObject( "bldr_wall_indcnch_5", "13965.799805 45.799999 3879.800049", "90.000000 0.000000 0.000000" );
+SpawnObject( "bldr_wall_indcnch_5", "13965.799805 45.810001 3888.570068", "90.000000 0.000000 0.000000" );
+SpawnObject( "bldr_wall_indcnch_5", "13956.799805 45.799999 3893.040039", "-30.000099 0.000000 0.000000" );
+SpawnObject( "bldr_wall_indcnch_5", "13949.099609 45.799999 3888.580078", "-29.999998 0.000000 0.000000" );
+SpawnObject( "bldr_wall_indcnch_5", "13957.200195 45.810001 3874.189941", "-150.000000 0.000000 0.000000" );
+SpawnObject( "bldr_wall_indcnch_5", "13949.700195 45.799999 3878.510010", "-150.000000 0.000000 0.000000" );
+SpawnObject( "bldr_pipe_big_18m", "13965.900391 35.000000 3888.389893", "0.000000 0.000000 0.000000" );
+SpawnObject( "bldr_pipe_big_18m", "13965.900391 35.000000 3877.699951", "-179.999985 0.000000 0.000000" );
+SpawnObject( "bldr_pipe_big_18m", "13957.299805 35.000000 3892.899902", "59.999996 0.000000 0.000000" );
+SpawnObject( "bldr_pipe_big_18m", "13947.099609 35.000000 3886.919922", "-119.999992 0.000000 0.000000" );
+SpawnObject( "bldr_pipe_big_18m", "13946.799805 35.000000 3879.260010", "-59.999996 0.000000 0.000000" );
+SpawnObject( "bldr_pipe_big_18m", "13957.099609 35.000000 3873.320068", "119.999992 0.000000 0.000000" );
+SpawnObject( "Land_Mil_Airfield_HQ", "13968.299805 51.849998 3862.379883", "-119.999992 0.000000 0.000000" );
+SpawnObject( "bldr_wall_indcnch_10", "13971.799805 45.650002 3869.010010", "59.999996 0.000000 0.000000" );
+SpawnObject( "bldr_wall_indcnch_10", "13976.700195 45.650002 3861.439941", "-29.999998 0.000000 0.000000" );
+SpawnObject( "bldr_wall_indcnch_10", "13968.900391 45.650002 3856.929932", "-29.999998 0.000000 0.000000" );
+SpawnObject( "bldr_wall_indcnch_10", "13962.599609 45.650002 3859.310059", "-29.999998 0.000000 0.000000" );
+SpawnObject( "bldr_wall_indcnch_10", "13959.799805 45.700001 3864.159912", "-31.000002 0.000000 0.000000" );
+SpawnObject( "bldr_pipe_big_18m", "13973.099609 47.450001 3863.360107", "150.000000 0.000000 -179.999985" );
+SpawnObject( "bldr_pipe_big_18m", "13967.900391 47.599998 3860.409912", "150.000000 0.000000 -179.999985" );
+SpawnObject( "bldr_wall_indcnch_10", "13934.099609 45.750000 3883.610107", "0.000000 0.000000 0.000000" );
+SpawnObject( "Land_DieselPowerPlant_Tank_Big", "13927.299805 49.450001 3883.379883", "112.000000 0.000000 0.000000" );
+SpawnObject( "Land_DieselPowerPlant_Tank_Big", "13927.099609 42.000099 3883.080078", "152.000000 0.000000 -179.999985" );
+SpawnObject( "Land_Tower_TC3_Red", "13958.099609 46.650002 3882.179932", "61.000000 0.000000 0.000000" );
+SpawnObject( "bldr_wall_indcnch_5", "13956.200195 45.849998 3888.429932", "-29.999998 0.000000 0.000000" );
+SpawnObject( "bldr_wall_indcnch_5", "13953.700195 45.849998 3886.899902", "-29.999998 0.000000 0.000000" );
+SpawnObject( "Land_DieselPowerPlant_Tank_Small", "13947.900391 39.650101 3883.620117", "0.000000 0.000000 -179.999985" );
+SpawnObject( "Land_DieselPowerPlant_Tank_Small", "13961.900391 40.000000 3892.040039", "0.000000 0.000000 -179.999985" );
+SpawnObject( "Land_DieselPowerPlant_Tank_Small", "13962.700195 40.099998 3875.439941", "0.000000 0.000000 -179.999985" );
+SpawnObject( "bldr_pipe_big_18m", "13937.099609 47.549900 3881.429932", "-90.000000 0.000000 179.999985" );
+SpawnObject( "bldr_pipe_big_18m", "13935.900391 47.500000 3885.689941", "-90.000000 0.000000 179.999985" );
+SpawnObject( "bldr_wall_indcnch_10", "13947.599609 45.750000 3883.669922", "0.000000 0.000000 0.000000" );
+SpawnObject( "bldr_wall_indcnch_10", "13962.599609 45.751999 3874.939941", "-119.999992 0.000000 0.000000" );
+SpawnObject( "bldr_wall_indcnch_10", "13962.299805 45.799999 3892.219971", "119.999992 0.000000 0.000000" );
+SpawnObject( "Land_Tower_TC1", "13971.200195 53.900101 3907.310059", "119.999992 0.000000 -52.000000" );
+SpawnObject( "Land_Smokestack_Metal", "13971.299805 56.099998 3908.959961", "29.999998 -52.000000 0.000000" );
+SpawnObject( "bldr_pipe_big_18m", "13967.400391 40.600101 3900.510010", "-150.000000 -90.000000 -179.999985" );
+SpawnObject( "Land_Pipe_Big_Ground1", "13964.700195 50.000000 3895.919922", "29.999998 0.000000 0.000000" );
+SpawnObject( "Land_Pipe_Big_Ground1", "13942.900391 49.900002 3883.879883", "-90.000000 0.000000 0.000000" );
+SpawnObject( "bldr_tank_small_white", "13968.000000 40.900002 3901.429932", "119.999992 0.000000 90.000000" );
+SpawnObject( "bldr_tank_medium", "13968.099609 44.199902 3878.759521", "-89.999992 -90.000000 179.999985" );
+SpawnObject( "bldr_tank_medium", "13968.000000 44.150002 3889.359863", "89.999992 -90.000000 0.000009" );
+SpawnObject( "bldr_tank_medium", "13932.431641 47.099918 3889.699707", "-45.000000 -0.000005 90.000000" );
+SpawnObject( "bldr_tank_medium", "13956.697266 44.250000 3871.679443", "30.999897 90.000000 -0.000009" );
+SpawnObject( "bldr_tank_medium", "13947.847656 44.250000 3876.939697", "28.999996 90.000000 -0.000009" );
+SpawnObject( "bldr_tank_medium", "13975.200195 51.150002 3853.790039", "150.000000 90.000000 179.999985" );
+SpawnObject( "bldr_mil_radar_mobile_base", "13968.799805 55.700100 3856.479980", "16.000002 0.000000 0.000000" );
+SpawnObject( "bldr_mil_radar_mobile_head", "13968.799805 59.449902 3856.850098", "0.000000 -14.000000 0.000000" );
+SpawnObject( "bldr_mil_radar_mobile_generator", "13965.799805 56.349998 3861.870117", "59.999996 0.000000 0.000000" );
+SpawnObject( "Land_Pier_Crane_A", "13952.001953 45.354198 3894.090576", "-29.999998 0.000000 0.000000" );
+SpawnObject( "bldr_wall_indcnch_10", "13953.097656 39.450001 3894.731201", "59.999996 0.000000 0.000000" );
+SpawnObject( "bldr_wall_indcnch_10", "13950.501953 39.459000 3893.260742", "59.999996 0.000000 0.000000" );
+SpawnObject( "Land_Pier_Crane_B", "13948.650391 57.799999 3898.010010", "-119.999992 0.000000 0.000000" );
+SpawnObject( "Land_Smokestack_Metal", "13958.099609 62.150002 3880.870117", "-31.000002 0.000000 0.000000" );
+SpawnObject( "bldr_FuelStation_Shed", "13934.200195 49.150101 3883.610107", "-179.999985 0.000000 0.000000" );
+SpawnObject( "Land_FuelStation_Feed", "13941.299805 47.054199 3883.620117", "90.000000 0.000000 0.000000" );
+SpawnObject( "Land_Misc_Well_Pump_Blue", "13958.960938 46.650101 3874.808594", "0.000000 0.000000 0.000000" );
+SpawnObject( "bldr_tank_medium", "13930.134766 47.099968 3891.333008", "-65.000000 0.000000 90.000000" );
+SpawnObject( "bldr_tank_medium", "13927.414063 47.099968 3891.898926", "-86.000046 0.000000 90.000000" );
+SpawnObject( "bldr_tank_small_white", "13959.633789 41.250011 3897.048096", "-119.999947 0.000000 90.000000" );
+SpawnObject( "bldr_tank_small_white", "13944.266602 41.250057 3888.211182", "-119.999992 0.000000 90.000000" );
+SpawnObject( "bldr_tank_small_white", "13960.505859 40.899986 3879.201904", "-119.999992 0.000000 90.000000" );
+SpawnObject( "bldr_tank_small_white", "13952.046875 40.449993 3883.584473", "0.000000 0.000000 90.000000" );
+SpawnObject( "bldr_tank_small_white", "13960.146484 40.799988 3888.268066", "119.999992 0.000000 90.000000" );
+SpawnObject( "bldr_tank_small_white", "13949.540039 40.599991 3877.630371", "30.000006 0.000000 0.000000" );
+SpawnObject( "bldr_tank_small_white", "13956.678711 40.550007 3873.591553", "29.999998 0.000000 0.000000" );
+SpawnObject( "bldr_tank_small_white", "13965.952148 40.549992 3880.071533", "90.000000 0.000000 0.000000" );
+SpawnObject( "bldr_tank_small_white", "13965.870117 40.499992 3888.449951", "90.000000 0.000000 0.000000" );
+SpawnObject( "bldr_wall_indcnch_5", "13954.002930 39.520000 3889.467773", "151.000031 0.000000 0.000000" );
+SpawnObject( "bldr_Wall_PipeFence_8", "13968.353516 46.599976 3888.587891", "90.000038 0.000000 0.000000" );
+SpawnObject( "bldr_Wall_PipeFence_8", "13968.338867 46.599998 3879.208496", "90.000000 0.000000 0.000000" );
+SpawnObject( "bldr_Wall_PipeFence_8", "13937.881836 46.599998 3878.644287", "0.000000 0.000000 0.000000" );
+SpawnObject( "bldr_Wall_PipeFence_8", "13947.987305 46.600002 3876.533691", "29.999998 0.000000 0.000000" );
+SpawnObject( "bldr_Wall_PipeFence_8", "13956.176758 46.599998 3871.828125", "29.999998 0.000000 0.000000" );
+SpawnObject( "bldr_Wall_PipeFence_8", "13937.922852 46.599998 3888.614502", "0.000000 0.000000 0.000000" );
+SpawnObject( "bldr_Wall_PipeFence_4", "13954.630859 46.599998 3864.109619", "59.999996 0.000000 0.000000" );
+SpawnObject( "bldr_Wall_PipeFence_4", "13957.917969 46.599998 3868.805176", "-30.000006 0.000000 0.000000" );
+SpawnObject( "bldr_Wall_PipeFence_4", "13955.286133 46.599998 3867.254150", "-31.000006 0.000000 0.000000" );
+SpawnObject( "bldr_Wall_PipeFence_4", "13942.449219 46.599998 3878.645508", "0.000000 0.000000 0.000000" );
+SpawnObject( "bldr_Wall_PipeFence_8", "13967.872070 46.599998 3900.015625", "30.000006 0.000000 0.000000" );
+SpawnObject( "bldr_Wall_PipeFence_4", "13970.371094 46.599998 3896.243896", "-59.999992 0.000000 0.000000" );
+SpawnObject( "bldr_Wall_PipeFence_4", "13942.252930 46.599998 3888.608398", "0.000000 0.000000 0.000000" );
+SpawnObject( "bldr_Wall_PipeFence_4", "13961.720703 46.599998 3901.153320", "-59.999996 0.000000 0.000000" );
+SpawnObject( "bldr_Wall_PipeFence_8", "13957.196289 40.349941 3897.557373", "60.000008 0.000000 0.000000" );
+SpawnObject( "bldr_Wall_PipeFence_8", "13951.636719 40.349995 3899.085693", "-30.000006 0.000000 0.000000" );
+SpawnObject( "bldr_Wall_PipeFence_4", "13945.695313 40.349995 3895.708496", "-30.000006 0.000000 0.000000" );
+SpawnObject( "bldr_Wall_PipeFence_8", "13954.965820 40.299995 3887.312012", "-30.000006 0.000000 0.000000" );
+SpawnObject( "Land_Ladder", "13952.068359 44.000168 3874.047852", "30.000006 0.000000 0.000000" );
+SpawnObject( "Land_Ladder", "13968.510742 44.000000 3883.928955", "-90.000000 0.000000 0.000000" );
+SpawnObject( "Land_Ladder", "13963.723633 43.900002 3902.561279", "-150.000031 0.000000 0.000000" );
+SpawnObject( "bldr_Wall_PipeFence_4", "13957.831055 46.599998 3896.514893", "-30.000006 0.000000 0.000000" );
+SpawnObject( "bldr_Wall_PipeFence_4", "13946.013672 46.599998 3889.658936", "-30.000006 0.000000 0.000000" );
+SpawnObject( "bldr_Wall_PipeFence_4", "13960.645508 46.599998 3899.267090", "-59.999992 0.000000 0.000000" );
+SpawnObject( "bldr_wall_indcnc2_3", "13952.068359 39.100014 3873.930908", "-150.000046 90.000000 179.999985" );
+SpawnObject( "bldr_wall_indcnc2_3", "13968.045898 39.100014 3884.129639", "90.000000 90.000000 179.999985" );
+SpawnObject( "bldr_wall_indcnc2_3", "13968.053711 39.100014 3881.246826", "-89.999992 90.000000 -0.000009" );
+SpawnObject( "bldr_wall_indcnc2_3", "13968.060547 39.100014 3878.286133", "90.000000 -90.000000 -0.000009" );
+SpawnObject( "bldr_wall_indcnc2_3", "13968.047852 39.099998 3887.134277", "90.000000 -90.000000 -0.000009" );
+SpawnObject( "bldr_wall_indcnc2_3", "13968.045898 39.100014 3890.119629", "-89.999992 -90.000000 179.999985" );
+SpawnObject( "bldr_wall_indcnc2_3", "13949.453125 39.099998 3875.443604", "-150.000015 90.000000 179.999985" );
+SpawnObject( "bldr_wall_indcnc2_3", "13946.860352 39.100014 3876.943604", "-149.999985 -90.000000 -0.000009" );
+SpawnObject( "bldr_wall_indcnc2_3", "13954.634766 39.099998 3872.480713", "-149.999985 90.000000 179.999985" );
+SpawnObject( "bldr_wall_indcnc2_3", "13957.199219 39.099998 3871.017578", "29.999998 -90.000000 179.999985" );
+SpawnObject( "bldr_Wall_PipeFence_8", "13948.073242 39.650005 3873.951660", "30.000006 0.000000 0.000000" );
+SpawnObject( "bldr_Wall_PipeFence_8", "13953.959961 39.650005 3870.550049", "30.000006 0.000000 0.000000" );
+SpawnObject( "bldr_Wall_PipeFence_4", "13958.427734 39.650005 3870.274170", "-59.999992 0.000000 0.000000" );
+SpawnObject( "bldr_Wall_PipeFence_4", "13945.617188 39.649998 3877.715088", "-59.999996 0.000000 0.000000" );
+SpawnObject( "bldr_Wall_PipeFence_8", "13970.053711 39.700005 3880.826660", "90.000000 0.000000 0.000000" );
+SpawnObject( "bldr_Wall_PipeFence_8", "13970.049805 39.699989 3887.579834", "90.000000 0.000000 0.000000" );
+SpawnObject( "bldr_Wall_PipeFence_4", "13968.041992 39.700005 3891.607666", "0.000000 0.000000 0.000000" );
+SpawnObject( "bldr_Wall_PipeFence_4", "13968.040039 39.699989 3876.826660", "0.000000 0.000000 0.000000" );
+SpawnObject( "bldr_pipe_big_18m", "13963.365234 46.099983 3873.544922", "149.999985 90.000000 -0.000009" );
+SpawnObject( "bldr_Wall_PipeFence_4", "13969.352539 46.599998 3873.462646", "59.999992 0.000000 0.000000" );
+SpawnObject( "bldr_tank_medium", "13960.046875 50.299995 3858.519287", "59.999992 0.000000 0.000000" );
+SpawnObject( "bldr_tank_medium", "13957.652344 47.400040 3857.324707", "-119.999992 90.000000 179.999985" );
+SpawnObject( "bldr_tank_medium", "13960.078125 44.299980 3858.641113", "-119.999992 -0.000005 179.999985" );
+SpawnObject( "bldr_tank_medium", "13952.876953 46.999969 3890.503662", "-30.000006 0.000000 0.000000" );
+SpawnObject( "bldr_tank_medium", "13925.488281 47.099968 3875.271973", "99.000130 0.000000 90.000000" );
+SpawnObject( "bldr_tank_medium", "13922.878906 47.099998 3876.159912", "119.999954 0.000000 90.000000" );
+
+	bool loadTraderObjects = false;
+	bool loadTraderNPCs = false;
+
+	string MissionWorldName = "empty";
+	GetGame().GetWorldName(MissionWorldName);
+
+	if (MissionWorldName != "empty")
+	{
+		//! Spawn mission objects and traders
+		FindMissionFiles(MissionWorldName, loadTraderObjects, loadTraderNPCs);
+	}
+
+	//INIT WEATHER BEFORE ECONOMY INIT------------------------
+	Weather weather = g_Game.GetWeather();
+
+	weather.MissionWeather(false);	// false = use weather controller from Weather.c
+
+	weather.GetOvercast().Set( Math.RandomFloatInclusive(0.02, 0.1), 1, 0);
+	weather.GetRain().Set( 0, 1, 0);
+	weather.GetFog().Set( 0, 1, 0);
+
+	//INIT ECONOMY--------------------------------------
+	Hive ce = CreateHive();
+	if ( ce )
+		ce.InitOffline();
+
+	//DATE RESET AFTER ECONOMY INIT-------------------------
+	int year, month, day, hour, minute;
+	int reset_month = 8, reset_day = 10;
+	GetGame().GetWorld().GetDate(year, month, day, hour, minute);
+
+	if ((month == reset_month) && (day < reset_day))
+	{
+		GetGame().GetWorld().SetDate(year, reset_month, reset_day, hour, minute);
+	}
+	else
+	{
+		if ((month == reset_month + 1) && (day > reset_day))
+		{
+			GetGame().GetWorld().SetDate(year, reset_month, reset_day, hour, minute);
+		}
+		else
+		{
+			if ((month < reset_month) || (month > reset_month + 1))
+			{
+				GetGame().GetWorld().SetDate(year, reset_month, reset_day, hour, minute);
+			}
+		}
+	}
+}
+
+/**@class		CustomExpansionMission
+ * @brief		This class handle expansion serverside mission
+ **/
+class CustomMission: MissionServer
+{
+	// ------------------------------------------------------------
+	// SetRandomHealth
+	// ------------------------------------------------------------
+	void SetRandomHealth(EntityAI itemEnt)
+	{
+		if ( itemEnt )
+		{
+			int rndHlt = Math.RandomInt(55,100);
+			itemEnt.SetHealth("","",rndHlt);
+		}
+	}
+	
+	override void OnInit()
+	{
+		ExpansionMissionModule missionModule;
+		if ( Class.CastTo( missionModule, GetModuleManager().GetModule( ExpansionMissionModule ) ) )
+		{
+			missionModule.SetMissionConstructor( COMMissionConstructor );
+		}
+
+		super.OnInit();
+	}
+	
+	// ------------------------------------------------------------
+	// Override PlayerBase CreateCharacter
+	// ------------------------------------------------------------
+	override PlayerBase CreateCharacter(PlayerIdentity identity, vector pos, ParamsReadContext ctx, string characterName)
+	{
+		Entity playerEnt;
+		playerEnt = GetGame().CreatePlayer(identity, characterName, pos, 0, "NONE");//Creates random player
+		Class.CastTo(m_player, playerEnt);
+
+		GetGame().SelectPlayer(identity, m_player);
+
+		return m_player;
+	}
+
+	// ------------------------------------------------------------
+	// Override StartingEquipSetup
+	// ------------------------------------------------------------
+	override void StartingEquipSetup(PlayerBase player, bool clothesChosen)
+	{
+		if ( GetExpansionSettings() && GetExpansionSettings().GetSpawn() && GetExpansionSettings().GetSpawn().StartingGear.UseStartingGear )
+		{
+			SetStartingGear(player);
+		}
+		else
+		{
+			EntityAI itemTop;
+			EntityAI itemEnt;
+			ItemBase itemBs;
+			float rand;
+
+			itemTop = player.FindAttachmentBySlotName("Body");
+
+			if ( itemTop )
+			{
+				itemEnt = itemTop.GetInventory().CreateInInventory("Rag");
+				if ( Class.CastTo(itemBs, itemEnt ) )
+					itemBs.SetQuantity(4);
+
+				SetRandomHealth(itemEnt);
+
+				string chemlightArray[] = { "Chemlight_White", "Chemlight_Yellow", "Chemlight_Green", "Chemlight_Red" };
+				int rndIndex = Math.RandomInt(0, 4);
+				itemEnt = itemTop.GetInventory().CreateInInventory(chemlightArray[rndIndex]);
+				SetRandomHealth(itemEnt);
+			}
+		}
+	}
+};
+
+Mission CreateCustomMission(string path)
+{
+	return new CustomMission();
+}
